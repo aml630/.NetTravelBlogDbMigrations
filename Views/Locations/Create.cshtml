@@ -1,4 +1,9 @@
-﻿@model TravelBlog.Models.Location
+﻿@{
+    ViewData["Title"] = "TravelBlog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model TravelBlog.Models.Location
 <html>
 <head>
     <title>Location - Create</title>
@@ -14,7 +19,7 @@
 
         @*@Html.HiddenFor(model => model.LocationId, "LocationId")*@
 
-        <input type="submit" value="Add new Location" />
+        <button class ="btn btn-success" type="submit">Add New Location</button>
     }
 </body>
 </html>

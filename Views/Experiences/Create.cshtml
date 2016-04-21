@@ -1,4 +1,9 @@
-﻿@model TravelBlog.Models.Experience
+﻿@{
+    ViewData["Title"] = "TravelBlog";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model TravelBlog.Models.Experience
 <html>
 <head>
     <title>Experience - Create</title>
@@ -10,14 +15,14 @@
     @using (Html.BeginForm())
     {
         @Html.LabelFor(model => model.ExperienceName)
-        @Html.TextBoxFor(model => model.ExperienceName)
+        @Html.TextBoxFor(model => model.ExperienceName, new { Class = "form-control" })
         @Html.LabelFor(model => model.LocationId)
 
-        @Html.DropDownList("LocationId")
+        @Html.DropDownList("LocationId", (SelectList)ViewBag.DropList, new { @class = "form-control" })
 
     @*@Html.HiddenFor(model => model.LocationId, "LocationId")*@
 
-        <input type="submit" value="Add new experience" />
+        <input class ="btn btn-success"type="submit" value="Add new experience" />
     }
     <p>@Html.ActionLink("Back to experiences", "Index")</p>
     @ViewBag.thisLocationId
